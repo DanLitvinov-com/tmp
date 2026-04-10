@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>nōtem — данные по упаковке 2025</title>
+<title>Данные по упаковке 2025 — Экосбор</title>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,16 +36,8 @@
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 20px;
-  }
-
-  .logo {
-    font-family: 'Unbounded', sans-serif;
-    font-size: 22px;
-    font-weight: 300;
-    letter-spacing: 0.08em;
-    color: var(--accent);
   }
 
   .deadline-pill {
@@ -174,6 +166,13 @@
     color: var(--accent);
     outline: none;
     min-height: 58px;
+    -moz-appearance: textfield;
+  }
+
+  .field-right input::-webkit-outer-spin-button,
+  .field-right input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 
   .field-right input::placeholder {
@@ -269,14 +268,13 @@
 <body>
 
 <header>
-  <div class="logo">nōtem</div>
   <div class="deadline-pill">до 15 апреля</div>
 </header>
 
 <div class="container">
   <div class="intro">
-    <h1>Данные по упаковке<br>за 2025 год</h1>
-    <p>Заполни по каждому виду. Если точных цифр нет — пиши примерно, это лучше, чем пустая строка.</p>
+    <h1>Данные по упаковке за 2025 год для налоговой (Экосбор 2025)</h1>
+    <p>Заполните по каждому виду. Если точных цифр нет — пишите примерно, это лучше, чем пустая строка.</p>
   </div>
 
   <form id="packForm" action="https://formspree.io/f/mwvwdaej" method="POST">
@@ -295,17 +293,17 @@
             <span class="field-hint">сколько было на складе на начало года</span>
           </label>
           <div class="field-right">
-            <input type="text" name="box_start" placeholder="0">
+            <input type="number" name="box_start" placeholder="0" min="0">
             <span class="unit">шт</span>
           </div>
         </div>
         <div class="field">
           <label class="field-label">
             Куплено за 2025 год
-            <span class="field-hint">по накладным или в 1С</span>
+            <span class="field-hint">по накладным или в МойСклад</span>
           </label>
           <div class="field-right">
-            <input type="text" name="box_bought" placeholder="0">
+            <input type="number" name="box_bought" placeholder="0" min="0">
             <span class="unit">шт</span>
           </div>
         </div>
@@ -315,7 +313,7 @@
             <span class="field-hint">сколько осталось на конец года</span>
           </label>
           <div class="field-right">
-            <input type="text" name="box_end" placeholder="0">
+            <input type="number" name="box_end" placeholder="0" min="0">
             <span class="unit">шт</span>
           </div>
         </div>
@@ -325,7 +323,7 @@
             <span class="field-hint">взвесь одну штуку на весах</span>
           </label>
           <div class="field-right">
-            <input type="text" name="box_weight" placeholder="0">
+            <input type="number" name="box_weight" placeholder="0" min="0">
             <span class="unit">грамм</span>
           </div>
         </div>
@@ -345,7 +343,7 @@
             Куплено за 2025 год
           </label>
           <div class="field-right">
-            <input type="text" name="paper_bought" placeholder="0">
+            <input type="number" name="paper_bought" placeholder="0" min="0">
             <span class="unit">кг</span>
           </div>
         </div>
@@ -354,7 +352,7 @@
             Остаток на 31 декабря 2025
           </label>
           <div class="field-right">
-            <input type="text" name="paper_end" placeholder="0">
+            <input type="number" name="paper_end" placeholder="0" min="0">
             <span class="unit">кг</span>
           </div>
         </div>
@@ -374,7 +372,7 @@
             Куплено за 2025 год
           </label>
           <div class="field-right">
-            <input type="text" name="film_bought" placeholder="0">
+            <input type="number" name="film_bought" placeholder="0" min="0">
             <span class="unit">кг</span>
           </div>
         </div>
@@ -383,7 +381,7 @@
             Остаток на 31 декабря 2025
           </label>
           <div class="field-right">
-            <input type="text" name="film_end" placeholder="0">
+            <input type="number" name="film_end" placeholder="0" min="0">
             <span class="unit">кг</span>
           </div>
         </div>
@@ -403,7 +401,7 @@
             Куплено за 2025 год
           </label>
           <div class="field-right">
-            <input type="text" name="glass_bought" placeholder="0">
+            <input type="number" name="glass_bought" placeholder="0" min="0">
             <span class="unit">шт</span>
           </div>
         </div>
@@ -412,12 +410,12 @@
             Вес одной штуки
           </label>
           <div class="field-right">
-            <input type="text" name="glass_weight" placeholder="0">
+            <input type="number" name="glass_weight" placeholder="0" min="0">
             <span class="unit">грамм</span>
           </div>
         </div>
       </div>
-      <div class="block-note">Если стеклянной упаковки нет — оставь нули.</div>
+      <div class="block-note">Если стеклянной упаковки нет — оставьте нули.</div>
     </div>
 
     <!-- Блок 5 -->
@@ -431,22 +429,22 @@
         <div class="field">
           <label class="field-label">
             Куплено за 2025 год
-            <span class="field-hint">если в рулонах — напиши количество рулонов и длину одного</span>
+            <span class="field-hint">если в рулонах — напишите количество рулонов и длину одного</span>
           </label>
           <div class="field-right">
-            <input type="text" name="ribbon_bought" placeholder="0">
+            <input type="number" name="ribbon_bought" placeholder="0" min="0">
             <span class="unit">кг</span>
           </div>
         </div>
       </div>
     </div>
 
-    <input type="hidden" name="_subject" value="nōtem — данные по упаковке 2025">
+    <input type="hidden" name="_subject" value="Данные по упаковке 2025 — Экосбор">
     <input type="hidden" name="_next" value="">
 
     <div class="submit-area">
       <button type="submit">Отправить →</button>
-      <p class="submit-note">Данные придут напрямую бухгалтеру.<br>Если что-то не знаешь — напиши примерно, уточним.</p>
+      <p class="submit-note">Если что-то не знаете — напишите примерно, уточним.</p>
     </div>
 
     <div class="success-msg" id="successMsg">
